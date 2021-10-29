@@ -1,12 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Sangwon Dev Blog`,
+    description: `Sangwon's Playground Dev Blog`,
+    author: `Sangwon`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
-    
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: '<https://my-website.com/>',
+        stripQueryString: true,
+      }
+    },
     {
       resolve: 'gatsby-plugin-typescript',
       options: {
@@ -66,18 +72,15 @@ module.exports = {
             }
           },
           {
-            resolve: `gatsby-plugin-sharp`,
+            resolve: 'gatsby-plugin-robots-txt',
             options: {
-              formats: ['auto', 'webp'],
-              quality: 100,
-              placeholder: 'blurred',
-              transformOptions: {
-                fit: 'COVER',
-              },
+              policy: [{ userAgent: '*', allow: '/'}]
             }
           },
+          `gatsby-plugin-sharp`,
           `gatsby-plugin-image`,
           `gatsby-transformer-sharp`,
+          `gatsby-plugin-sitemap`
         ]
       }
       

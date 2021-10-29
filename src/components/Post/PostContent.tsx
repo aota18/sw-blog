@@ -32,11 +32,19 @@ const MarkdownRenderer = styled.div`
         margin-bottom: 30px;
     }
 
+    * + h1,
+    * + h2,
+    * + h3 {
+        margin-top: 80px;
+    }
+
     hr + h1,
     hr + h2,
     hr + h3 {
         margin-top: 0;
     }
+
+    
 
     h1 {
         font-size: 30px;
@@ -50,11 +58,31 @@ const MarkdownRenderer = styled.div`
         font-size: 20px;
     }
 
+    // Adjust Quotation Element Style
+    blockquote {
+        margin: 30px 0;
+        padding: 5px 15px;
+        border-left: 2px solid #000000;
+        font-weight: 800;
+    }
+
     // Adjust List Element Style
     ol,
     ul {
         margin-left: 20px;
         padding: 30px 0;
+    }
+
+    // Adjust Horizontal Rule style
+    hr {
+        border: 1px solid #000000;
+        margin: 100px 0;
+    }
+
+    // Adjust Link Element Style
+    a {
+        color: #4263eb;
+        text-decoration: underline;
     }
 
     //Adjust Code Style
@@ -73,6 +101,34 @@ const MarkdownRenderer = styled.div`
     code[class*='language-'],
     pre[class*='language-']{
         tab-size: 2;
+    }
+
+    // Markdown Responsive Design
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 80px 20px;
+        line-height: 1.6;
+        font-size: 14px;
+
+        h1 {
+            font-size: 23px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 17px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        hr {
+            margin: 50px 0;
+        }
     }
 `
 
